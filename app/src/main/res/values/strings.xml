@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">SaveApp</string>
+    <string name="dashboard_new_goal">Nueva meta</string>
+    <string name="dashboard_my_goals">Mis metas</string>
+    <string name="dashboard_total_label">Total ahorrado</string>
+    <string name="filter_all">Todas</string>
+    <string name="filter_short">Corto plazo</string>
+    <string name="filter_medium">Mediano plazo</string>
+    <string name="filter_long">Largo plazo</string>
+    <string name="goal_action_simulate">Simular</string>
+    <string name="goal_action_deposit">Abonar</string>
+    <string name="deposit_title">Realizar abono</string>
+    <string name="deposit_field_amount">Monto a abonar</string>
+    <string name="deposit_summary_title">Nuevo saldo estimado</string>
+    <string name="deposit_cancel">Cancelar</string>
+    <string name="deposit_confirm">Confirmar</string>
+    <string name="simulator_title">Simulador de Meta</string>
+    <string name="simulator_back">Volver</string>
+    <string name="simulator_field_name">Nombre de la meta</string>
+    <string name="simulator_field_target">Monto objetivo</string>
+    <string name="simulator_field_initial">Monto inicial</string>
+    <string name="simulator_mode_a">Modalidad A</string>
+    <string name="simulator_mode_b">Modalidad B</string>
+    <string name="simulator_slider_question">¿Cuánto deseas aportar periódicamente?</string>
+    <string name="simulator_slider_value">$%1$d</string>
+    <string name="simulator_save">Guardar meta</string>
+</resources>
