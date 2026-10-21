@@ -1,4 +1,4 @@
-package com.example.saveapp.ui.theme.Screen
+package com.example.saveapp.screen
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column

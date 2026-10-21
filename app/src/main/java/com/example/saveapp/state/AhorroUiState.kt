@@ -1,4 +1,4 @@
-package com.example.saveapp.ui.theme.state
+package com.example.saveapp.state
 
 import com.example.saveapp.data.model.CategoriaMeta
 import com.example.saveapp.data.model.MetaAhorro

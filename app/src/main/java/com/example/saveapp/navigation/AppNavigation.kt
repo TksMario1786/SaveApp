@@ -1,4 +1,4 @@
-package com.example.saveapp.ui.theme.Navigation
+package com.example.saveapp.navigation
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
@@ -11,10 +11,10 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.dialog
 import androidx.navigation.compose.rememberNavController
-import com.example.saveapp.ui.theme.Screen.DashboardScreen
-import com.example.saveapp.ui.theme.Screen.DepositDialog
-import com.example.saveapp.ui.theme.Screen.GoalItemUi
-import com.example.saveapp.ui.theme.Screen.NuevaMetaScreen
+import com.example.saveapp.screen.DashboardScreen
+import com.example.saveapp.screen.DepositDialog
+import com.example.saveapp.screen.GoalItemUi
+import com.example.saveapp.screen.NuevaMetaScreen
 import java.util.Locale
 import kotlin.math.ceil
 
