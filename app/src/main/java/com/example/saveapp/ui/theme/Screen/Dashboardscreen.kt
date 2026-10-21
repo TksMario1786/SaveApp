@@ -23,7 +23,6 @@ import androidx.compose.material3.FilterChip
 import androidx.compose.material3.Icon
 import androidx.compose.material3.LinearProgressIndicator
 import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
@@ -97,8 +96,7 @@ fun DashboardScreen(
             items(goals) { goal ->
                 GoalItemCard(
                     goal = goal,
-                    onDeposit = { onNavigateToDeposit(goal) },
-                    onSimulate = onNavigateToSimulator
+                    onDeposit = { onNavigateToDeposit(goal) }
                 )
             }
         }
@@ -170,7 +168,6 @@ private fun CategoryFilterBar(
 private fun GoalItemCard(
     goal: GoalItemUi,
     onDeposit: () -> Unit,
-    onSimulate: () -> Unit,
     modifier: Modifier = Modifier
 ) {
     Card(modifier = modifier.fillMaxWidth()) {
@@ -198,9 +195,6 @@ private fun GoalItemCard(
                 modifier = Modifier.fillMaxWidth(),
                 horizontalArrangement = Arrangement.spacedBy(8.dp, Alignment.End)
             ) {
-                OutlinedButton(onClick = onSimulate) {
-                    Text(stringResource(R.string.goal_action_simulate))
-                }
                 Button(onClick = onDeposit) {
                     Text(stringResource(R.string.goal_action_deposit))
                 }

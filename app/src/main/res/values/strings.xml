@@ -14,7 +14,7 @@
     <string name="deposit_summary_title">Nuevo saldo estimado</string>
     <string name="deposit_cancel">Cancelar</string>
     <string name="deposit_confirm">Confirmar</string>
-    <string name="simulator_title">Simulador de Meta</string>
+    <string name="newGoal_title">Nueva meta</string>
     <string name="simulator_back">Volver</string>
     <string name="simulator_field_name">Nombre de la meta</string>
     <string name="simulator_field_target">Monto objetivo</string>

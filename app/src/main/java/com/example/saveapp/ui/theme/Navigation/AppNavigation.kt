@@ -14,7 +14,7 @@ import androidx.navigation.compose.rememberNavController
 import com.example.saveapp.ui.theme.Screen.DashboardScreen
 import com.example.saveapp.ui.theme.Screen.DepositDialog
 import com.example.saveapp.ui.theme.Screen.GoalItemUi
-import com.example.saveapp.ui.theme.Screen.SimulatorScreen
+import com.example.saveapp.ui.theme.Screen.NuevaMetaScreen
 import java.util.Locale
 import kotlin.math.ceil
 
@@ -98,7 +98,7 @@ fun AppNavigation() {
         }
 
         composable("simulator") {
-            SimulatorScreen(
+            NuevaMetaScreen(
                 goalName = goalName,
                 onGoalNameChange = { goalName = it },
                 targetAmount = targetAmount,

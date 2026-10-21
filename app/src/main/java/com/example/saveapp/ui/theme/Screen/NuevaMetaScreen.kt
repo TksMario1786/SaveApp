@@ -34,7 +34,7 @@ import com.example.saveapp.R
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun SimulatorScreen(
+fun NuevaMetaScreen(
     goalName: String,
     onGoalNameChange: (String) -> Unit,
     targetAmount: String,
@@ -56,7 +56,7 @@ fun SimulatorScreen(
         modifier = modifier.fillMaxSize(),
         topBar = {
             TopAppBar(
-                title = { Text(stringResource(R.string.simulator_title)) },
+                title = { Text(stringResource(R.string.newGoal_title)) },
                 navigationIcon = {
                     IconButton(onClick = onNavigateBack) {
                         Icon(
@@ -159,9 +159,9 @@ fun SimulatorScreen(
 
 @Preview(showBackground = true)
 @Composable
-private fun SimulatorScreenPreview() {
+private fun NuevaMetaScreenPreview() {
     MaterialTheme {
-        SimulatorScreen(
+        NuevaMetaScreen(
             goalName = "",
             onGoalNameChange = {},
             targetAmount = "",
