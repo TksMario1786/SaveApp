@@ -11,22 +11,53 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.platform.LocalContext
 
 private val DarkColorScheme = darkColorScheme(
-    primary = Purple80,
-    secondary = PurpleGrey80,
-    tertiary = Pink80,
+    primary = SaveAppGreenPrimaryDark,
+    onPrimary = SaveAppGreenOnPrimaryDark,
+    primaryContainer = SaveAppGreenPrimaryContainerDark,
+    onPrimaryContainer = SaveAppGreenOnPrimaryContainerDark,
+    secondary = SaveAppGreenSecondary,
+    onSecondary = SaveAppGreenOnSecondary,
+    secondaryContainer = SaveAppGreenSecondaryContainer,
+    onSecondaryContainer = SaveAppGreenOnSecondaryContainer,
+    tertiary = SaveAppGreenTertiary,
+    onTertiary = SaveAppGreenOnTertiary,
+    background = SaveAppOnBackground,
+    onBackground = SaveAppBackground,
+    surface = SaveAppOnSurface,
+    onSurface = SaveAppSurface,
+    surfaceVariant = SaveAppOnSurfaceVariant,
+    onSurfaceVariant = SaveAppSurfaceVariant,
+    outline = SaveAppOutline,
 )
 
 private val LightColorScheme = lightColorScheme(
-    primary = Purple40,
-    secondary = PurpleGrey40,
-    tertiary = Pink40,
+    primary = SaveAppGreenPrimary,
+    onPrimary = SaveAppGreenOnPrimary,
+    primaryContainer = SaveAppGreenPrimaryContainer,
+    onPrimaryContainer = SaveAppGreenOnPrimaryContainer,
+    secondary = SaveAppGreenSecondary,
+    onSecondary = SaveAppGreenOnSecondary,
+    secondaryContainer = SaveAppGreenSecondaryContainer,
+    onSecondaryContainer = SaveAppGreenOnSecondaryContainer,
+    tertiary = SaveAppGreenTertiary,
+    onTertiary = SaveAppGreenOnTertiary,
+    tertiaryContainer = SaveAppGreenTertiaryContainer,
+    onTertiaryContainer = SaveAppGreenOnTertiaryContainer,
+    background = SaveAppBackground,
+    onBackground = SaveAppOnBackground,
+    surface = SaveAppSurface,
+    onSurface = SaveAppOnSurface,
+    surfaceVariant = SaveAppSurfaceVariant,
+    onSurfaceVariant = SaveAppOnSurfaceVariant,
+    outline = SaveAppOutline,
+    outlineVariant = SaveAppOutlineVariant
 )
 
 @Composable
 fun SaveAppTheme(
     darkTheme: Boolean = isSystemInDarkTheme(),
-    // Dynamic color is available on Android 12+
-    dynamicColor: Boolean = true,
+    // Se establece en false por defecto para forzar la paleta verde de SaveApp
+    dynamicColor: Boolean = false,
     content: @Composable () -> Unit,
 ) {
     val colorScheme = when {

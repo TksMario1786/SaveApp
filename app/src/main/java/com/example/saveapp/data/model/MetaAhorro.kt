@@ -7,6 +7,11 @@ enum class CategoriaMeta {
     MEDIANO_PLAZO,
     LARGO_PLAZO
 }
+enum class EstadoMeta {
+    EN_PROGRESO,
+    CASI_COMPLETADA,
+    COMPLETADA
+}
 
 data class MetaAhorro(
     val id: String,
@@ -28,6 +33,18 @@ data class MetaAhorro(
         } else {
             0f
         }
+    val progreso: Float
+        get() = porcentajeAvance / 100f
+    /** Estado de la meta según el avance */
+    val estado: EstadoMeta
+        get() = when {
+            montoObjetivo > 0.0 && montoActual >= montoObjetivo -> EstadoMeta.COMPLETADA
+            porcentajeAvance >= UMBRAL_CASI_COMPLETADA -> EstadoMeta.CASI_COMPLETADA
+            else -> EstadoMeta.EN_PROGRESO
+        }
+    /** meses restantes según el monto inicial. */
+    val mesesRestantesSugeridos: Int
+        get() = calcularMesesRestantes(ahorroMensualSugerido)
 
     /** Cuota mensual necesaria para cubrir el monto restante en [mesesDeseados]. */
     fun calcularCuotaMensual(mesesDeseados: Int): Double =
@@ -36,4 +53,7 @@ data class MetaAhorro(
     /** Meses necesarios (redondeados hacia arriba) ahorrando [ahorroMensual] cada mes. */
     fun calcularMesesRestantes(ahorroMensual: Double): Int =
         if (ahorroMensual > 0.0) ceil(montoRestante / ahorroMensual).toInt() else 0
+    private companion object {
+        const val UMBRAL_CASI_COMPLETADA = 80f
+    }
 }

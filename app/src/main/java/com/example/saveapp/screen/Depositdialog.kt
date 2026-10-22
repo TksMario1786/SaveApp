@@ -5,37 +5,40 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material3.Button
 import androidx.compose.material3.Card
 import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.OutlinedTextField
-import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
+import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.KeyboardType
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.saveapp.R
+import com.example.saveapp.data.model.MetaAhorro
+import com.example.saveapp.state.AhorroUiState
+import com.example.saveapp.state.ErrorAhorro
 
 @Composable
 fun DepositDialog(
-    goalName: String,
-    amount: String,
-    onAmountChange: (String) -> Unit,
-    summaryBalance: String,
-    onCancel: () -> Unit,
-    onConfirm: () -> Unit,
-    modifier: Modifier = Modifier
+    meta: MetaAhorro,
+    uiState: AhorroUiState,
+    onMontoChange: (String) -> Unit,
+    onConfirmar: (String, String) -> Unit,
+    onCancelar: () -> Unit,
+    modifier: Modifier = Modifier,
 ) {
-    Surface(
-        modifier = modifier,
-        shape = MaterialTheme.shapes.extraLarge,
-        tonalElevation = 6.dp
+    val hayError = uiState.error == ErrorAhorro.ABONO_INVALIDO
+
+    Card(
+        modifier = modifier.fillMaxWidth(),
+        shape = RoundedCornerShape(28.dp)
     ) {
         Column(
             modifier = Modifier.padding(24.dp),
@@ -43,57 +46,55 @@ fun DepositDialog(
         ) {
             Text(
                 text = stringResource(R.string.deposit_title),
-                style = MaterialTheme.typography.headlineSmall
+                style = MaterialTheme.typography.headlineSmall,
+                fontWeight = FontWeight.Bold
             )
-            Text(text = goalName, style = MaterialTheme.typography.titleMedium)
+            Column {
+                Text(
+                    text = meta.nombre,
+                    style = MaterialTheme.typography.titleMedium,
+                    fontWeight = FontWeight.SemiBold
+                )
+                Text(
+                    text = stringResource(
+                        R.string.deposit_balance_summary,
+                        meta.montoActual,
+                        meta.montoObjetivo
+                    ),
+                    style = MaterialTheme.typography.bodySmall,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant
+                )
+            }
+
             OutlinedTextField(
-                value = amount,
-                onValueChange = onAmountChange,
-                label = { Text(stringResource(R.string.deposit_field_amount)) },
-                keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
+                value = uiState.montoAbono,
+                onValueChange = onMontoChange,
+                label = { Text(stringResource(R.string.deposit_field)) },
+                prefix = { Text(stringResource(R.string.field_currency_prefix)) },
+                keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Decimal),
                 singleLine = true,
+                isError = hayError,
+                supportingText = {
+                    Text(
+                        text = stringResource(
+                            if (hayError) R.string.error_invalid_deposit else R.string.deposit_helper
+                        )
+                    )
+                },
                 modifier = Modifier.fillMaxWidth()
             )
-            Card(modifier = Modifier.fillMaxWidth()) {
-                Column(
-                    modifier = Modifier.padding(16.dp),
-                    verticalArrangement = Arrangement.spacedBy(4.dp)
-                ) {
-                    Text(
-                        text = stringResource(R.string.deposit_summary_title),
-                        style = MaterialTheme.typography.labelLarge
-                    )
-                    Text(text = summaryBalance, style = MaterialTheme.typography.headlineSmall)
-                }
-            }
+
             Row(
                 modifier = Modifier.fillMaxWidth(),
                 horizontalArrangement = Arrangement.spacedBy(8.dp, Alignment.End)
             ) {
-                OutlinedButton(onClick = onCancel) {
-                    Text(stringResource(R.string.deposit_cancel))
+                TextButton(onClick = onCancelar) {
+                    Text(stringResource(R.string.action_cancel))
                 }
-                Button(onClick = onConfirm) {
-                    Text(stringResource(R.string.deposit_confirm))
+                Button(onClick = { onConfirmar(meta.id, uiState.montoAbono) }) {
+                    Text(stringResource(R.string.action_confirm_deposit))
                 }
             }
         }
     }
 }
-
-@Preview(showBackground = true)
-@Composable
-private fun DepositDialogPreview() {
-    MaterialTheme {
-        DepositDialog(
-            goalName = "",
-            amount = "",
-            onAmountChange = {},
-            summaryBalance = "",
-            onCancel = {},
-            onConfirm = {}
-        )
-    }
-}
-
-

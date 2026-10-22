@@ -1,19 +1,67 @@
 <resources>
     <string name="app_name">SaveApp</string>
-    <string name="dashboard_new_goal">Nueva meta</string>
+
+
+    <string name="formato_monto">$%1$,.2f</string>
+    <string name="formato_monto_moneda">$%1$,.2f MXN</string>
+    <string name="formato_porcentaje">%1$.0f%%</string>
+
+    <string name="dashboard_total_label">Tu ahorro total</string>
+    <string name="dashboard_total_subtitle">Cada peso te acerca a tus metas.</string>
+    <string name="dashboard_global_of">De $%1$,.2f MXN en metas</string>
     <string name="dashboard_my_goals">Mis metas</string>
-    <string name="dashboard_total_label">Total ahorrado</string>
+    <string name="dashboard_goals_count">Metas: %1$d</string>
+    <string name="dashboard_filter_label">Filtrar por plazo</string>
+    <string name="dashboard_new_goal">Nueva meta</string>
+    <string name="dashboard_empty_title">Aún no tienes metas</string>
+    <string name="dashboard_empty_message">Crea tu primera meta con el botón Nueva meta y empieza a ahorrar.</string>
+    <string name="dashboard_empty_filter">No hay metas en esta categoría.</string>
+
     <string name="filter_all">Todas</string>
     <string name="filter_short">Corto plazo</string>
     <string name="filter_medium">Mediano plazo</string>
     <string name="filter_long">Largo plazo</string>
+
+    <string name="goal_amount_target">/ $%1$,.2f</string>
+    <string name="goal_remaining_months">Meses restantes: %1$d</string>
+    <string name="goal_status_progress">En progreso</string>
+    <string name="goal_status_almost">¡Casi completado!</string>
+    <string name="goal_status_completed">Completada</string>
     <string name="goal_action_simulate">Simular</string>
     <string name="goal_action_deposit">Abonar</string>
-    <string name="deposit_title">Realizar abono</string>
-    <string name="deposit_field_amount">Monto a abonar</string>
-    <string name="deposit_summary_title">Nuevo saldo estimado</string>
-    <string name="deposit_cancel">Cancelar</string>
-    <string name="deposit_confirm">Confirmar</string>
+
+    <string name="new_goal_title">Nueva meta</string>
+    <string name="new_goal_back">Volver</string>
+    <string name="new_goal_headline">Tu próxima meta, más cerca</string>
+    <string name="new_goal_subtitle">Ajusta tu ahorro y descubre cuándo llegarás.</string>
+    <string name="field_goal_name">Nombre de la meta</string>
+    <string name="field_goal_target">Monto objetivo</string>
+    <string name="field_goal_initial">Ahorro inicial</string>
+    <string name="field_currency_prefix">$</string>
+    <string name="category_label">Plazo de la meta</string>
+    <string name="mode_cuota">Modo A: Cuotas</string>
+    <string name="mode_slider">Modo B: Slider</string>
+    <string name="simulator_slider_question">¿Cuánto puedes ahorrar al mes?</string>
+    <string name="simulator_per_month">/ mes</string>
+    <string name="simulator_months_question">¿En cuántos meses quieres lograrlo?</string>
+    <string name="field_months">Plazo en meses</string>
+    <string name="simulator_result_months">Tiempo estimado: %1$d meses</string>
+    <string name="simulator_result_monthly">Ahorro mensual: $%1$,.2f</string>
+    <string name="simulator_per_week">por semana</string>
+    <string name="simulator_per_day">por día</string>
+    <string name="simulator_note">Estimación sin intereses · Meses de 4 semanas</string>
+    <string name="simulator_empty_hint">Ingresa el monto objetivo para calcular los tiempos.</string>
+    <string name="action_save_goal">Guardar Meta</string>
+    <string name="error_invalid_goal">Por favor ingresa un nombre y montos válidos.</string>
+
+    <string name="deposit_title">Agregar abono</string>
+    <string name="deposit_balance_summary">$%1$,.2f / $%2$,.2f MXN</string>
+    <string name="deposit_field">Monto a abonar hoy</string>
+    <string name="deposit_helper">Este abono se sumará a tu ahorro actual.</string>
+    <string name="action_confirm_deposit">Confirmar Abono</string>
+    <string name="action_cancel">Cancelar</string>
+    <string name="error_invalid_deposit">Ingresa un monto de abono válido mayor a $0</string>
+
     <string name="newGoal_title">Nueva meta</string>
     <string name="simulator_back">Volver</string>
     <string name="simulator_field_name">Nombre de la meta</string>
@@ -21,7 +69,10 @@
     <string name="simulator_field_initial">Monto inicial</string>
     <string name="simulator_mode_a">Modalidad A</string>
     <string name="simulator_mode_b">Modalidad B</string>
-    <string name="simulator_slider_question">¿Cuánto deseas aportar periódicamente?</string>
     <string name="simulator_slider_value">$%1$d</string>
     <string name="simulator_save">Guardar meta</string>
+    <string name="deposit_field_amount">Monto a abonar</string>
+    <string name="deposit_summary_title">Nuevo saldo estimado</string>
+    <string name="deposit_cancel">Cancelar</string>
+    <string name="deposit_confirm">Confirmar</string>
 </resources>

@@ -1,1 +1,26 @@
-[]
+[
+  {
+    "id": "1",
+    "nombre": "Nueva lap",
+    "montoObjetivo": 30000.0,
+    "montoActual": 2020.0,
+    "ahorroMensualSugerido": 0.0,
+    "categoria": "CORTO_PLAZO"
+  },
+  {
+    "id": "2",
+    "nombre": "auto nuevo",
+    "montoObjetivo": 50000.0,
+    "montoActual": 12300.0,
+    "ahorroMensualSugerido": 0.0,
+    "categoria": "MEDIANO_PLAZO"
+  },
+  {
+    "id": "3",
+    "nombre": "nuevo celular",
+    "montoObjetivo": 25000.0,
+    "montoActual": 700.0,
+    "ahorroMensualSugerido": 0.0,
+    "categoria": "CORTO_PLAZO"
+  }
+]
